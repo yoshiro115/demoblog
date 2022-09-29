@@ -9,17 +9,24 @@
     {% for item in articles %}
         
    
-        
-        <article class="col-md-4 mx-auto text-center border border-dark mb-3 p-3 mt-3 mr-1">
+        <div class="card col-md-4" style="width: 18rem;">
+            <img src="{{item.image}}" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{ item.content|raw}}</p>
+                <a href="{{ path('blog_show', {id: item.id}) }}" class="btn btn-primary">lire la suite</a>
+            </div>
+        </div>
+        {# <article class=" mx-auto text-center border border-dark mb-3 p-3 mt-3 mr-1">
             <h2>{{item.title}}</h2>
             <div class="metadata">Ecrit le {{item.createdAt|date('d/m/Y à H:i:s')}} dans al catégorie Politique</div>
             <div class="content">
                 <img src="{{item.image}}" alt="">
-                {{ item.content|raw}}
+                <div>{{ item.content|raw}}</div>
                 <a href="{{ path('blog_show', {id: item.id}) }}" class="btn btn-primary">lire la suite</a>
             </div>
         
-        </article>
+        </article> #}
      {% endfor %}
     </section>
 
