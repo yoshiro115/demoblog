@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+
+    <section class="row articles">
+    
+    {% for voiture in voitures %}
+        
+   
+        
+         <article class="col-md-3 mx-auto text-center border border-dark mb-3 p-3 mt-3 me-1">
+            <h2>{{voiture.marque}}</h2>
+            <div class="metadata">{{voiture.modele}}</div>
+            <div class="content">
+                <img src="" alt="">
+                {{ voiture.description}}
+                <h4 class="text-center">{{voiture.prix}}</h4>
+                <a href="{{ path('voiture_show', {id: voiture.id}) }}" class="btn btn-primary">voir la voiture/acheter</a>
+            </div>
+        
+        </article>
+     {% endfor %}
+    </section>
+
+{% endblock %}
