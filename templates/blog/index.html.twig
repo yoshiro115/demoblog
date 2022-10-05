@@ -10,9 +10,12 @@
         
    
         <div class="card col-md-3 m-3 p-2" >
-            <img src="{{item.image}}" alt="">
+            <img class="img-fluid" src="{{item.image}}" alt="">
             <div class="card-body">
                 <h5 class="card-title">{{item.title}}</h5>
+                <div class="metadata">Ecrit le 
+                {{item.createdAt|date('d/m/Y à H:i:s')}}
+                dans la catégorie {{ item.category.title }}</div>
                 <p class="card-text">{{ item.content|raw}}</p>
                 <a href="{{ path('blog_show', {id: item.id}) }}" class="btn btn-primary">lire la suite</a>
             </div>

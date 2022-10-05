@@ -13,6 +13,8 @@
             <th>modèle</th>
             <th>prix</th>
             <th>description</th>
+            <th>type</th>
+            <th>nombre de roues</th>
             <th>Option</th>
         </tr>
 	</thead>
@@ -26,6 +28,8 @@
             <td>{{voiture.modele}}</td>
             <td>{{voiture.prix}}</td>
             <td><p>{{voiture.description}}</p></td>
+            <td>{{voiture.type.titre}}</td>
+            <td>{{voiture.type.nbRoues}}</td>
             <td>
                 <a href="{{ path('voiture_show',{id: voiture.id}) }}"><button type="submit" class="btn btn-info mt-2">Voir</button></a>
                 <a href="{{ path('voiture_edit',{id: voiture.id}) }}"><button type="submit" class="btn btn-warning mt-2">Modifier</button></a>

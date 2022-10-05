@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles admin{% endblock %}
+
+{% block body %}
+
+<a href="" class="btn btn-success mt-2 mb-2">ajouter un article</a>
+
+<table class="table table-bordered text-center">
+
+    <thead>
+        <tr>
+            {% for data in colonnes %}
+                <th>{{ data }}</th>    
+            {% endfor %}
+            <th>Catégorie</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>    
+    </thead>
+    <tbody>
+        <tr>
+            {% for item in articles %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.content|raw }}</td>
+                    <td><img src="{{ item.image }}" style="width: 150px"></td>
+                    <td><{{item.createdAt|date('d/m/Y à H:i:s')}}/td>
+                    <td>{{item.category.title}}</td>
+                    <td>
+                        <a href="#" class:"text-dark"><i class="fas fa-edit"></i></a>
+                    </td>
+                    <td>
+                        <a href="#" class:"text-dark"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        
+        </tr>
+    </tbody>
+
+</table>
+
+
+
+{% endblock %}
