@@ -4,6 +4,10 @@
 
 {% block body %}
 
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success text-center">{{ message }}</div>    
+{% endfor %}
+
 <a href="" class="btn btn-success mt-2 mb-2">ajouter un article</a>
 
 <table class="table table-bordered text-center">

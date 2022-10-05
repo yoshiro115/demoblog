@@ -57,12 +57,12 @@ class AdminController extends AbstractController
             $article->setCreatedAt(new \DateTime);
             $manager->persist($article);
             $manager->flush();
-            return $this->redirectToRoute('blog_show', [
-                'id' => $article->getId()
-            ]);
+            $this->addFlash('success', "L'article a bien été enregistré !");
+            //permet de creer un message qui sera affiché une fois a l'utilisateur
+            return $this->redirectToRoute('admin_articles');
         }
 
-        return $this->renderForm("blog/form.html.twig", [
+        return $this->renderForm("admin/form_article.html.twig", [
             "formArticle" => $form,
             "editMode" => $article->getId() !== null
         ]);
