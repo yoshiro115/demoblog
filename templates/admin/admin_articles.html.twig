@@ -8,7 +8,7 @@
     <div class="alert alert-success text-center">{{ message }}</div>    
 {% endfor %}
 
-<a href="" class="btn btn-success mt-2 mb-2">ajouter un article</a>
+<a href="{{path('admin_new_article')}}" class="btn btn-success mt-2 mb-2">ajouter un article</a>
 
 <table class="table table-bordered text-center">
 
@@ -33,7 +33,7 @@
                     <td><{{item.createdAt|date('d/m/Y à H:i:s')}}/td>
                     <td>{{item.category.title}}</td>
                     <td>
-                        <a href="#" class:"text-dark"><i class="fas fa-edit"></i></a>
+                        <a href="{{path('admin_edit_article', {id: item.id})}}" class:"text-dark"><i class="fas fa-edit"></i></a>
                     </td>
                     <td>
                         <a href="#" class:"text-dark"><i class="fas fa-trash"></i></a>
